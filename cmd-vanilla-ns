@@ -1,0 +1,1 @@
+python train-ns-title.py --cell_type "vanilla" --pos_dir "data/title.pos-ns" --neg_dir "data/title.neg-ns" --word2vec "/home/paperspace/Documents/BioSentVec/BioWordVec_PubMed_MIMICIII_d200.vec.bin" --word_embedding_dim 200

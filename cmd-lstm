@@ -1,0 +1,1 @@
+python train-title.py --cell_type "lstm" --pos_dir "data/title.pos" --neg_dir "data/title.neg" --word2vec "/home/paperspace/Documents/BioSentVec/BioWordVec_PubMed_MIMICIII_d200.vec.bin" --word_embedding_dim 200
