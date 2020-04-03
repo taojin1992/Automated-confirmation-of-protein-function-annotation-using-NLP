@@ -1,0 +1,10 @@
+# delete duplicate
+comm -12 <(sort 269-pub.txt-prep) <(sort 303-pub.txt-prep) > samepub.txt
+comm -12 <(sort 269-pub.txt-prep-ns) <(sort 303-pub.txt-prep-ns) > samepub.txt-ns
+
+# delete the common lines from each file
+grep -F -v -f samepub.txt 269-pub.txt-prep > 269-pub.txt-clean
+grep -F -v -f samepub.txt 303-pub.txt-prep > 303-pub.txt-clean
+grep -F -v -f samepub.txt-ns 269-pub.txt-prep-ns > 269-pub.txt-ns-clean
+grep -F -v -f samepub.txt-ns 303-pub.txt-prep-ns > 303-pub.txt-ns-clean
+
