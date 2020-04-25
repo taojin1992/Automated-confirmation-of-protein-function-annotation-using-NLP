@@ -7,9 +7,11 @@ RCNN code are modified from https://github.com/roomylee/rcnn-text-classification
 
 Pretrained word embedding and sentence embedding models: https://github.com/ncbi-nlp/BioSentVec
 
+Tensorflow:
 
+pip install tensorflow==1.4
 
-
+numpy version 1.15.2
 
 # uni-tests (focus on annotation score 3-4):
 https://www.uniprot.org/uniprot/F8SJR0
