@@ -1,3 +1,3 @@
-python ensemble-eval.py --pos_dir "data/title.pos-ns" --neg_dir "data/title.neg-ns" --batch_size 32 --checkpoint_dir "/home/paperspace/Documents/RCNN-421-BioSentVec/runs-ns/1571088121/checkpoints"
+python ensemble-eval.py --pos_dir "data/title.pos-ns" --neg_dir "data/title.neg-ns" --batch_size 32 --checkpoint_dir "/home/paperspace/Documents/RCNN-421-BioSentVec/runs-ns/1587761106/checkpoints"  #1587761106，   1571088121
 
 # run evaluation

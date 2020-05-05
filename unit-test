@@ -1,1 +1,31 @@
-python unit-classification.py --checkpoint_dir "/home/paperspace/Documents/RCNN-421-BioSentVec/runs-ns/1571088121/checkpoints"
+python unit-classification.py --checkpoint_dir "/home/paperspace/Documents/RCNN-421-BioSentVec/runs-ns/1587761106/checkpoints" --unknown_dir "data/P71009-pub"
+
+
+
+#"data/P0ACK2-pub"
+
+
+
+#"data/P75747-pub"
+
+
+
+#"data/unknown1"
+
+
+#unknown-neg-Porin-AaxA"
+
+
+#unknown-neg-Bifunctional-protein-Aas"
+
+
+#unknown-neg-AAA-ATPase-At5g17760"
+
+
+#unknown-pos-Methylaspartate-ammonia-lyase"
+
+
+#unknown-pos-glucarate-dehydratase" 
+
+
+#"/home/paperspace/Documents/RCNN-421-BioSentVec/runs-ns/1571088121/checkpoints"

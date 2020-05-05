@@ -152,12 +152,12 @@ def eval():
     x_eval = x_test
     y_eval = y_test
 
-    lr_model_1 = pickle.load(open(lr_dir + "0.01_lr.sav", 'rb'))
+    lr_model_1 = pickle.load(open(lr_dir + "0.01_lr.sav", 'rb')) #0.01
     lr_model_2 = pickle.load(open(lr_dir + "0.1_lr.sav", 'rb'))
     svm_model_1 = pickle.load(open(svm_dir + "c_0.1_svm.sav", 'rb'))
     svm_model_2 = pickle.load(open(svm_dir + "c_0.01_svm.sav", 'rb'))
 
-    Y_test_pred_lr_1 = (lr_model_1.predict_proba(x_test_700) >= 0.5).astype(int)
+    Y_test_pred_lr_1 = (lr_model_1.predict_proba(x_test_700) >= 0.25).astype(int) #0.3,,
     Y_test_pred_lr_1 = Y_test_pred_lr_1[:, 1]
     Y_test_pred_s1 = svm_model_1.predict(x_test_700)
 
@@ -196,14 +196,18 @@ def eval():
 
             correct_predictions = float(sum(all_predictions == y_eval))
             print("Total number of test examples: {}".format(len(y_eval)))
-            Y_test_pred = np.add(Y_test_pred, all_predictions)
-            Y_test_pred[Y_test_pred >= 2.0] = 1.0
+            Y_test_pred = np.add(Y_test_pred.astype(int), all_predictions.astype(int))
+            #Y_test_pred[Y_test_pred >= 2.0] = 1.0
+            Y_test_pred[Y_test_pred < 2] = 0
+            Y_test_pred[Y_test_pred > 0] = 1
+
             Y_test_pred=Y_test_pred.astype(int) 
             y_eval=y_eval.astype(int) 
             acc_test, pre_test, rec_test, f1_test = accuracy_score(y_eval, Y_test_pred), precision_score(y_eval, Y_test_pred), recall_score(y_eval, Y_test_pred), f1_score(y_eval, Y_test_pred)
-            print(acc_test)
-            print(pre_test)
-            print(rec_test)
+            print("accuracy = " + str(acc_test))
+            print("precison = " + str(pre_test))
+            print("recall = " + str(rec_test))
+            print("f1 = " + str(f1_test))
 
 
 def main(_):

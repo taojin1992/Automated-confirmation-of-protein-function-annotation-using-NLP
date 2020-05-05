@@ -96,7 +96,7 @@ def eval():
     lr_model_1 = pickle.load(open(lr_dir + "0.01_lr.sav", 'rb'))
     svm_model_1 = pickle.load(open(svm_dir + "c_0.1_svm.sav", 'rb'))
 
-    Y_test_pred_lr_1 = (lr_model_1.predict_proba(unknown_arrays_700) >= 0.5).astype(int)
+    Y_test_pred_lr_1 = (lr_model_1.predict_proba(unknown_arrays_700) >= 0.25).astype(int)
     Y_test_pred_lr_1 = Y_test_pred_lr_1[:, 1]
     Y_test_pred_s1 = svm_model_1.predict(unknown_arrays_700)
     print(Y_test_pred_lr_1)
@@ -134,13 +134,20 @@ def eval():
                 all_predictions = np.concatenate([all_predictions, batch_predictions])
 
             print("here\n")
-            print(all_predictions)
-            print(Y_test_pred_lr_1)
-            print(Y_test_pred_s1)
-            final_pred = np.add(Y_test_pred_lr_1, Y_test_pred_s1)
-            final_pred = np.add(final_pred, all_predictions)
-            final_pred[final_pred >= 2.0] = 1.0
+            print("rcnn:")
+            print(all_predictions.astype(int))
+            print("logistic regression:")
+            print(Y_test_pred_lr_1.astype(int))
+            print("svm:")
+            print(Y_test_pred_s1.astype(int))
+            final_pred = np.add(Y_test_pred_lr_1.astype(int), Y_test_pred_s1.astype(int))
+            final_pred = np.add(final_pred, all_predictions.astype(int))
+            print(final_pred)
+            #final_pred[final_pred >= 2.0] = 1.0
+            final_pred[final_pred < 2] = 0
+            final_pred[final_pred > 0] = 1
             final_pred=final_pred.astype(int) 
+            print("final:")
             print(final_pred)
 
 
