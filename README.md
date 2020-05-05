@@ -13,7 +13,7 @@ pip install tensorflow==1.4
 
 numpy version 1.15.2
 
-# uni-tests (focus on annotation score 3-4):
+# uni-tests:
 https://www.uniprot.org/uniprot/F8SJR0
 publication titles:
 pseudomonas aeruginosa generalized transducing phage phipa is new member of phikzlike group of jumbo phages and infects model laboratory strains and clinical isolates from cystic fibrosis patients
