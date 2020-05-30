@@ -32,3 +32,22 @@ The directory to checkpoint in the command should be modified. Also, inside ense
 # Uni-tests:
 run ./unit_test
 
+Alternatively, run:
+  
+python unit-classification.py --checkpoint_dir "/home/paperspace/Documents/RCNN-421-BioSentVec/runs-ns/1587761106/checkpoints" --unknown_dir "data/P71009-pub"
+
+The content of data/P71009-pub can be checked in the data directory. P71009 is the entry identifier of the protein from Swiss-Prot.
+
+Example output:
+P71009-pub (3 publications)
+rcnn:
+[1 1 0]
+logistic regression:
+[1 1 1]
+svm:
+[0 1 0]
+voting:
+[2 3 1]
+final:
+[1 1 0]
+Two of publications predicted as positive. 
