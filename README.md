@@ -39,15 +39,15 @@ python unit-classification.py --checkpoint_dir "/home/paperspace/Documents/RCNN-
 The content of data/P71009-pub can be checked in the data directory. P71009 is the entry identifier of the protein from Swiss-Prot.
 
 Example output:
-P71009-pub (3 publications)
-rcnn:
-[1 1 0]
-logistic regression:
-[1 1 1]
-svm:
-[0 1 0]
-voting:
-[2 3 1]
-final:
-[1 1 0]
-Two of publications predicted as positive. 
+P71009-pub (3 publications) <br />
+rcnn: <br />
+[1 1 0] <br />
+logistic regression: <br />
+[1 1 1] <br />
+svm: <br />
+[0 1 0] <br />
+voting: <br />
+[2 3 1] <br />
+final: <br />
+[1 1 0] <br />
+Two of publications predicted as positive.  <br />
