@@ -13,23 +13,22 @@ pip install tensorflow==1.4
 
 numpy version 1.15.2
 
-# uni-tests:
-https://www.uniprot.org/uniprot/F8SJR0
-publication titles:
-pseudomonas aeruginosa generalized transducing phage phipa is new member of phikzlike group of jumbo phages and infects model laboratory strains and clinical isolates from cystic fibrosis patients
+# Model Training:
+./cmd-lstm-ns
 
-phage nucleus and tubulin spindle are conserved among large pseudomonas phages
+Alternatively, run the command below:
+python train-ns-title.py --cell_type "lstm" --pos_dir "data/title.pos-ns" --neg_dir "data/title.neg-ns" --word2vec "/home/paperspace/Documents/BioSentVec/BioWordVec_PubMed_MIMICIII_d200.vec.bin" --word_embedding_dim 200 --context_embedding_dim 150 --hidden_size 150
 
-viral capsid trafficking along treadmilling tubulin filaments in bacteria
+LSTM means using LSTM unit; "ns" stands for non-stemmed words; "pos-ns" stands for positive non-stemmed data; "neg-ns" stands for negative non-stemmed data. The directory of "word2vec" should be modified based on the actual directory of the pretrained "BioWordVec_PubMed_MIMICIII_d200.vec.bin". 
 
+# Model Evaluation: 
+./runevalemsemble
+
+Alternatively, run the command below:
+python ensemble-eval.py --pos_dir "data/title.pos-ns" --neg_dir "data/title.neg-ns" --batch_size 32 --checkpoint_dir "/home/paperspace/Documents/RCNN-421-BioSentVec/runs-ns/1587761106/checkpoints" 
+
+The directory to checkpoint in the command should be modified. Also, inside ensemble-eval.py, the directory of SVM and logistic regression models (which can be accessed in /Models) should be modified.
+
+# Uni-tests:
 run ./unit_test
 
-output:
-
-negative
-
-rcnn [0 0 0]
-
-lr [0 0 1]
-
-svm [0 0 0]
