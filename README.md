@@ -36,7 +36,7 @@ Alternatively, run:
   
 python unit-classification.py --checkpoint_dir "/home/paperspace/Documents/RCNN-421-BioSentVec/runs-ns/1587761106/checkpoints" --unknown_dir "data/P71009-pub"
 
-The content of data/P71009-pub can be checked in the data directory. P71009 is the entry identifier of the protein from Swiss-Prot.
+The content of data/P71009-pub can be checked in the data directory. P71009 is the entry identifier of the protein from Swiss-Prot. Note: remember change the model directories accordingly inside unit-classification.py
 
 Example output:
 P71009-pub (3 publications) <br />
