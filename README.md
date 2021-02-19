@@ -33,6 +33,10 @@ data_helpers.py  eval.py           sent2vec        v0.9.2.zip
 (pass_venv) jin@pass:/opt/pass/machine-learning-deploy/sent2vec$ pip install .
 
 ```
+If a later version of tensorflow is used, try:
+```
+import tensorflow.compat.v1 as tf
+```
 
 # Model Training:
 ./cmd-lstm-ns
