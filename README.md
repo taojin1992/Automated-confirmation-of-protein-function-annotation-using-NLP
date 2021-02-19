@@ -13,6 +13,27 @@ pip install tensorflow==1.4
 
 numpy version 1.15.2
 
+# More info on environment setup:
+```
+git clone https://github.com/epfml/sent2vec.git 
+pip install Cython
+
+  *   download the pretrained model BioSentVec: BioSentVec_PubMed_MIMICIII-bigram_d700.bin
+  *   installed fasttext as below (fasttext was installed successfully)
+  
+$ wget https://github.com/facebookresearch/fastText/archive/v0.9.2.zip
+$ unzip v0.9.2.zip
+$ cd fastText-0.9.2
+$ make
+
+(pass_venv) jin@pass:/opt/pass/machine-learning-deploy$ ls
+__pycache__      ensemble-eval.py  fastText-0.9.2  unit-classification.py
+data_helpers.py  eval.py           sent2vec        v0.9.2.zip
+(pass_venv) jin@pass:/opt/pass/machine-learning-deploy$ cd sent2vec/
+(pass_venv) jin@pass:/opt/pass/machine-learning-deploy/sent2vec$ pip install .
+
+```
+
 # Model Training:
 ./cmd-lstm-ns
 
